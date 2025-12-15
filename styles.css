@@ -37,7 +37,7 @@ header {
 }
 
 nav {
-    max-width: 1300px; /* ancho máximo del contenido del menú */
+    max-width: 1400px; /* ancho máximo del contenido del menú */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -64,7 +64,7 @@ nav {
 }
 
 .logo-slogan {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #607289;
     font-weight: 400;
     line-height: 1.2;
@@ -141,7 +141,7 @@ nav {
     text-decoration: none;
     color: #1f2933;
     font-weight: 500;
-    font-size: 0.95rem; /* un poco más pequeño para que quepa mejor */
+    font-size: 1.1rem; /* un poco más pequeño para que quepa mejor */
     letter-spacing: 0.03em;
     text-transform: none;
     position: relative;
@@ -276,11 +276,14 @@ nav {
     transform: translateY(-2px);
 }
 
-.trust-text {
-    font-size: 0.9rem;
-    color: #32C1C5;
-    font-weight: 500;
+.trust-text.highlight {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0E6BA8;
 }
+
+
 
 .mini-cards {
     display: grid;
@@ -325,13 +328,17 @@ nav {
 }
 
 .mini-card-content h3 {
-    font-size: 0.95rem;
+    text-align: center;   /* 👈 centra h3 y p */
+}
+
+.mini-card-content h3 {
+    font-size: 1.5rem;
     color: #0E6BA8;
     margin-bottom: 0.25rem;
 }
 
 .mini-card-content p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #666;
 }
 
@@ -403,11 +410,11 @@ nav {
 }
 
 .stat-text {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: #666;
 
-    line-height: 1;        /* evita espacio extra */
-    margin-top: -0.5px;     /* 👈 ajuste fino */
+    line-height: 1.15;        /* evita espacio extra */
+    margin-top: -0.7px;     /* 👈 ajuste fino */
 }
 
 
@@ -421,7 +428,7 @@ section {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: #0E6BA8;
     text-align: center;
@@ -429,12 +436,17 @@ section {
 }
 
 .section-subtitle {
-    text-align: center;
+    max-width: 1000px;      /* ancho controlado */
+    margin: 0 auto 3rem;  /* 👈 centra el bloque */
+    
+    text-align: justify;  /* texto recto */
+    text-align-last: left;
+
     color: #666;
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto 3rem;
+    font-size: 1.3rem;
 }
+
+
 
 /* =======================================
    SECCIÓN TRATAMIENTOS
