@@ -37,7 +37,7 @@ header {
 }
 
 nav {
-    max-width: 1200px; /* ancho máximo del contenido del menú */
+    max-width: 1300px; /* ancho máximo del contenido del menú */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -55,7 +55,7 @@ nav {
 }
 
 .logo-text {
-    font-size: 1.35rem; /* tamaño del nombre de la marca en el header */
+    font-size: 1.7rem; /* tamaño del nombre de la marca en el header */
     font-weight: 700;
     letter-spacing: 0.03em;
     color: #0E6BA8;
@@ -64,7 +64,7 @@ nav {
 }
 
 .logo-slogan {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #607289;
     font-weight: 400;
     line-height: 1.2;
@@ -848,7 +848,7 @@ footer {
     }
 
     .logo-slogan {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
     }
 
     .mobile-menu-toggle {
