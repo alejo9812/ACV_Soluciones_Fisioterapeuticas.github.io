@@ -373,7 +373,7 @@ nav {
     background-image: url('Inicio.jpeg');
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 
@@ -471,28 +471,70 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.treatment-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #32C1C5 0%, #0E6BA8 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.treatment-image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
+.treatment-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 107, 168, 0.2); /* 👈 azul rey */
+}
+
+.img-brazo {
+    background-image: url('Brazo.jpeg');
+}
+
+.img-pierna {
+    background-image: url('Pierna.jpg');
+}
+
+.img-pie {
+    background-image: url('Pie.png');
+}
+
+.img-equilibrio {
+    background-image: url('Equilibrio.jpeg');
+}
+
+.img-masaje {
+    background-image: url('Masaje.jpeg');
+}
+
+.img-consulta {
+    background-image: url('Consulta.jpg');
+}
+
+
+
 .treatment-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;        /* 👈 ajusta tamaño */
     color: #0E6BA8;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    text-align: center;      /* título centrado */
 }
 
 .treatment-card p {
+    font-size: 0.95rem;      /* 👈 ajusta tamaño */
     color: #666;
-    line-height: 1.7;
+    line-height: 1.6;
+
+    max-width: 90%;          /* bloque más compacto */
+    margin: 0 auto;          /* 👈 centra el bloque */
+    text-align: justify;     /* 👈 texto recto */
+    text-align-last: left;
 }
+
 
 /* =======================================
    SECCIÓN EQUIPO
