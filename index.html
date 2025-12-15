@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ACV Soluciones Fisioterapeuticas - Recuperación Integral Tras Accidentes Cerebrovasculares</title>
+    <!-- Título que se ve en la pestaña del navegador -->
+    <title>ACV Soluciones Fisioterapéuticas - Recuperación integral tras accidentes cerebrovasculares</title>
+
+    <!-- Fuente principal de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal. Aquí cambias colores, tamaños, etc. -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- =======================
+         BARRA DE NAVEGACIÓN
+         ======================= -->
     <header>
         <nav>
             <div class="logo">
-                <a href="#inicio" class="logo-text">ACV Soluciones Fisioterapeuticas</a>
-                <span class="logo-slogan">Recupera tu vida tras un Accidente Cerebrovasculare</span>
+                <!-- Texto del logo. Si cambias el nombre de la marca, hazlo aquí -->
+                <a href="#inicio" class="logo-text">ACV Soluciones Fisioterapéuticas</a>
+                <!-- Frase pequeña debajo del logo -->
+                <span class="logo-slogan">Recupera tu vida tras un accidente cerebrovascular</span>
             </div>
+            <!-- Botón del menú móvil (las 3 rayas). Solo se ve en pantallas pequeñas -->
             <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -24,6 +34,7 @@
             </button>
             <div class="mobile-menu-overlay"></div>
             <ul class="nav-links">
+                <!-- Cada enlace lleva a una sección más abajo de la misma página -->
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#tratamientos">Tratamientos</a></li>
                 <li><a href="#equipo">Equipo</a></li>
@@ -34,22 +45,52 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- =======================
+         SECCIÓN PRINCIPAL (HERO)
+         Aquí van el título grande, texto, botones e imagen
+         ======================= -->
     <main>
         <section id="inicio" class="hero">
             <div class="hero-container">
+                <!-- Columna izquierda: texto y botones -->
                 <div class="hero-left">
                     <div class="rating-badge">
                         <div class="star-icon"></div>
                         <span>5.0 (482 reseñas de pacientes)</span>
                     </div>
-                    <h1>Recuperación Integral<br>Tras Accidentes Cerebrovasculares (ACV)</h1>
-                    <p>Nos especializamos en la rehabilitación de personas con secuelas físicas y neurológicas causadas por accidentes cerebrovasculares: derrames, trombosis, aneurismas e infarto cerebral. Trabajamos hombro, brazo, mano, pierna, pie caído o equino y pérdida del equilibrio mediante terapias personalizadas, masajes terapéuticos y ejercicios de neurorehabilitación para ayudarte a recuperar tu independencia y calidad de vida en el menor tiempo posible y en el menor tiempo posible.</p>
+                    <!-- Título principal. Para cambiar el mensaje, edita este h1 -->
+                    <h1>Recuperación integral<br>tras accidentes cerebrovasculares (ACV)</h1>
+                    <!-- Párrafo descriptivo principal. Aquí cuentas a quién ayudas y cómo -->
+                    <p>Nos especializamos en la rehabilitación de personas con secuelas físicas y neurológicas causadas por accidentes cerebrovasculares (ACV): derrames, trombosis, aneurismas e infarto cerebral. Trabajamos hombro, brazo, mano, pierna, pie caído o equino y pérdida del equilibrio mediante terapias personalizadas, masajes terapéuticos y ejercicios de neurorehabilitación para ayudarte a recuperar tu independencia y calidad de vida en el menor tiempo posible.</p>
+                    <!-- Botones de llamada a la acción (CTA). Cambia el texto o enlaces aquí -->
                     <div class="hero-buttons">
                         <a href="#contacto" class="btn-primary">Agendar valoración</a>
                         <a href="https://wa.me/573114768213" class="btn-secondary" target="_blank" rel="noopener">Escribir por WhatsApp</a>
                     </div>
+                    <!-- Mensaje de confianza (oferta de consulta gratis) -->
                     <p class="trust-text">¡Primera consulta gratis! Evaluamos tu caso y diseñamos un plan de tratamiento a tu medida.</p>
+                </div>
+                <!-- Columna derecha: imagen principal + estadísticas + mini tarjetas -->
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <!-- La imagen de fondo se define en CSS (.hero-image::before).
+                             Para cambiarla, ve a styles.css y busca "hero-image::before". -->
+                        <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-number">+10</div>
+                            <div class="stat-text"> Años de experiencia en rehabilitación neurológica</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-text">Pacientes en proceso de recuperación</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-text">Reportan mejora en su calidad de vida</div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Mini tarjetas de servicio que van DEBAJO de la imagen -->
                     <div class="mini-cards">
                         <div class="mini-card">
                             <div class="mini-card-icon"></div>
@@ -67,33 +108,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <div class="hero-image">
-                        <!-- Background image will be applied via CSS -->
-                    </div>
-                    <div class="stats-cards">
-                        <div class="stat-card">
-                            <div class="stat-number">+10 años</div>
-                            <div class="stat-text">Experiencia en rehabilitación neurológica</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-text">Pacientes en proceso de recuperación</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-text">Reportan mejora en su calidad de vida</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Treatments Section -->
+        <!-- =======================
+             SECCIÓN DE TRATAMIENTOS
+             Aquí explicas los servicios principales
+             ======================= -->
         <section id="tratamientos">
             <h2 class="section-title">¿En qué te ayudamos después de un ACV?</h2>
+                    <!-- Subtítulo introductorio de la sección -->
                     <p class="section-subtitle">Diseñamos planes integrales que combinan distintas terapias para acompañarte en cada etapa de tu recuperación. Cada programa es personalizado según la parte del cuerpo afectada, tu nivel de movilidad actual y tus objetivos personales.</p>
             <div class="treatments-grid">
+                <!-- Cada .treatment-card es una "tarjeta" de servicio.
+                     Puedes duplicar o eliminar tarjetas copiando/pegando este bloque. -->
                 <div class="treatment-card">
                     <div class="treatment-icon">🏃</div>
                     <h3>Rehabilitación de hombro, brazo y mano</h3>
@@ -132,7 +160,10 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- =======================
+             SECCIÓN EQUIPO
+             Presenta a los profesionales
+             ======================= -->
         <section id="equipo">
             <h2 class="section-title">Nuestro equipo especializado</h2>
             <p class="section-subtitle">Contamos con fisioterapeutas, neurólogos y terapeutas ocupacionales con amplia experiencia en el manejo de secuelas por ACV.</p>
@@ -164,7 +195,10 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- =======================
+             SECCIÓN TESTIMONIOS
+             Historias de pacientes
+             ======================= -->
         <section id="testimonios" class="testimonials">
             <h2 class="section-title">Historias de recuperación</h2>
             <div class="testimonials-grid">
@@ -183,7 +217,10 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- =======================
+             SECCIÓN PREGUNTAS FRECUENTES
+             Cada ítem se abre/cierra con JavaScript (ver script.js)
+             ======================= -->
         <section id="preguntas">
             <h2 class="section-title">Preguntas frecuentes sobre la recuperación tras un ACV</h2>
             <div class="faq-list">
@@ -206,7 +243,10 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- =======================
+             SECCIÓN CONTACTO
+             Formulario + botón de WhatsApp
+             ======================= -->
         <section id="contacto" class="contact">
             <h2 class="contact-title">Recupera tu vida tras un ACV</h2>
             <p class="contact-text">Agenda tu primera consulta gratis y recibe una valoración personalizada de tu caso.</p>
@@ -236,7 +276,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- =======================
+         PIE DE PÁGINA
+         ======================= -->
     <footer>
         <div class="footer-content">
             <p>© 2025 NeuroVida ACV. Todos los derechos reservados.</p>
@@ -246,6 +288,9 @@
             </ul>
         </div>
     </footer>
+
+    <!-- JavaScript principal.
+         Aquí se maneja el menú móvil, el formulario, el scroll suave, etc. -->
     <script src="script.js"></script>
 </body>
 </html>

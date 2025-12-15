@@ -1,4 +1,7 @@
-/* Reset and base styles */
+/* =======================================
+   ESTILOS BASE (reset y configuración general)
+   Puedes cambiar la fuente y el fondo aquí.
+   ======================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +9,22 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* hace que el scroll al hacer clic en el menú sea suave */
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* fuente principal */
     line-height: 1.6;
     color: #333;
+    /* Fondo general de la página (degradado azul claro) */
     background: linear-gradient(135deg, #e8f4f8 0%, #d4eef5 25%, #e0e8f5 50%, #e8f0f8 100%);
     min-height: 100vh;
 }
 
-/* Navbar */
+/* =======================================
+   BARRA DE NAVEGACIÓN (header + menú)
+   Cambia colores del menú y logo en esta sección.
+   ======================================= */
 header {
     position: sticky;
     top: 0;
@@ -30,7 +37,7 @@ header {
 }
 
 nav {
-    max-width: 1200px; /* un poco más ancho para que quepa todo en una sola línea */
+    max-width: 1200px; /* ancho máximo del contenido del menú */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -48,7 +55,7 @@ nav {
 }
 
 .logo-text {
-    font-size: 1.35rem; /* más pequeño para evitar que se parta en dos líneas */
+    font-size: 1.35rem; /* tamaño del nombre de la marca en el header */
     font-weight: 700;
     letter-spacing: 0.03em;
     color: #0E6BA8;
@@ -57,7 +64,7 @@ nav {
 }
 
 .logo-slogan {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: #607289;
     font-weight: 400;
     line-height: 1.2;
@@ -146,7 +153,8 @@ nav {
     color: #0E6BA8;
 }
 
-/* Línea indicadora bajo los ítems del menú (estilo médico limpio) */
+/* Línea indicadora bajo los ítems del menú (degradé azul).
+   Si no la quieres, puedes borrar todo este bloque ::after. */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -165,7 +173,10 @@ nav {
     width: 100%;
 }
 
-/* Hero Section */
+/* =======================================
+   SECCIÓN PRINCIPAL (HERO)
+   Imagen, título grande, botones y mini tarjetas.
+   ======================================= */
 .hero {
     max-width: 1200px;
     margin: 4rem auto;
@@ -354,9 +365,13 @@ nav {
     opacity: 0.3;
 }
 
+.hero-right .mini-cards {
+    margin-top: 2rem;
+}
+
 .stats-cards {
     position: absolute;
-    bottom: -30px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -377,7 +392,8 @@ nav {
     font-size: 1.8rem;
     font-weight: 700;
     color: #0E6BA8;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.05rem; /* este es el espacio con el texto de abajo */
+    line-height: 1.05;      /* reduce el espacio entre +10 y años */
 }
 
 .stat-text {
@@ -385,7 +401,9 @@ nav {
     color: #666;
 }
 
-/* Sections */
+/* =======================================
+   SECCIONES GENERALES (títulos y márgenes)
+   ======================================= */
 section {
     max-width: 1200px;
     margin: 6rem auto;
@@ -408,7 +426,10 @@ section {
     margin: 0 auto 3rem;
 }
 
-/* Treatments Grid */
+/* =======================================
+   SECCIÓN TRATAMIENTOS
+   Tarjetas de servicios
+   ======================================= */
 .treatments-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -451,7 +472,9 @@ section {
     line-height: 1.7;
 }
 
-/* Team Section */
+/* =======================================
+   SECCIÓN EQUIPO
+   ======================================= */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -496,7 +519,9 @@ section {
     font-size: 0.9rem;
 }
 
-/* Testimonials */
+/* =======================================
+   SECCIÓN TESTIMONIOS
+   ======================================= */
 .testimonials {
     background: linear-gradient(135deg, #e8f4f8 0%, #d4eef5 100%);
     padding: 4rem 2rem;
@@ -530,7 +555,10 @@ section {
     font-weight: 600;
 }
 
-/* FAQ */
+/* =======================================
+   SECCIÓN PREGUNTAS FRECUENTES (FAQ)
+   El abrir/cerrar se maneja en script.js
+   ======================================= */
 .faq-list {
     display: flex;
     flex-direction: column;
@@ -586,7 +614,9 @@ section {
     padding-top: 0.5rem;
 }
 
-/* Contact Section */
+/* =======================================
+   SECCIÓN CONTACTO
+   ======================================= */
 .contact {
     background: white;
     padding: 4rem;
@@ -696,7 +726,9 @@ section {
     display: block;
 }
 
-/* Footer */
+/* =======================================
+   PIE DE PÁGINA
+   ======================================= */
 footer {
     background: #0E6BA8;
     color: white;
@@ -731,7 +763,10 @@ footer {
     opacity: 0.8;
 }
 
-/* Responsive Design */
+/* =======================================
+   DISEÑO RESPONSIVO (TABLET Y MÓVIL)
+   Aquí se ajustan tamaños para pantallas pequeñas.
+   ======================================= */
 @media (max-width: 968px) {
     nav {
         padding: 0 1.5rem;

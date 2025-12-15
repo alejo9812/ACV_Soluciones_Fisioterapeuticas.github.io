@@ -1,57 +1,71 @@
-// FAQ Accordion functionality
+// =======================================
+// LÓGICA DE INTERACCIÓN DE LA PÁGINA
+// Aquí se controla:
+// - Acordeón de Preguntas Frecuentes (FAQ)
+// - Envío y validación del formulario de contacto
+// - Botón que abre WhatsApp
+// - Scroll suave al hacer clic en el menú
+// - Comportamiento del menú móvil (hamburguesa)
+// =======================================
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all FAQ items
+    // ========================
+    // 1. FAQ: abrir/cerrar respuestas
+    // ========================
+    // Obtenemos todos los elementos .faq-item
     const faqItems = document.querySelectorAll('.faq-item');
     
-    // Add click event to each FAQ item
+    // Para cada pregunta, escuchamos el clic
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
         question.addEventListener('click', () => {
-            // Close other open items
+            // Cerramos cualquier otra pregunta que esté abierta
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                 }
             });
             
-            // Toggle current item
+            // Abrimos/cerramos la pregunta actual
             item.classList.toggle('active');
         });
     });
 
-    // Contact form handling
+    // ========================
+    // 2. Manejo del formulario de contacto
+    // ========================
     const contactForm = document.querySelector('.contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
+            // Tomamos los datos del formulario
             const formData = new FormData(contactForm);
             const nombre = formData.get('nombre');
             const telefono = formData.get('telefono');
             const email = formData.get('email');
             const mensaje = formData.get('mensaje');
             
-            // Basic validation
+            // Validación básica: que no haya campos vacíos
             if (!nombre || !telefono || !email || !mensaje) {
                 showFormMessage('Por favor, completa todos los campos.', 'error');
                 return;
             }
             
-            // Email validation
+            // Validación sencilla del formato del correo
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showFormMessage('Por favor, ingresa un correo electrónico válido.', 'error');
                 return;
             }
             
-            // Simulate form submission (in a real scenario, you would send this to a server)
-            // For now, we'll just show a success message
+            // En un proyecto real aquí se enviaría a un servidor.
+            // De momento solo mostramos un mensaje de éxito.
             showFormMessage('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.', 'success');
             
-            // Reset form
+            // Limpiamos los campos
             contactForm.reset();
             
             // Optionally, you could send the data via WhatsApp or email
@@ -59,17 +73,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Phone button click handler
+    // ========================
+    // 3. Botón de teléfono / WhatsApp
+    // ========================
     const phoneButton = document.querySelector('.phone-button');
     if (phoneButton) {
         phoneButton.addEventListener('click', function() {
             const phoneNumber = '573114768213';
-            // Open WhatsApp
+            // Abrimos WhatsApp en una nueva pestaña con el número configurado
             window.open(`https://wa.me/${phoneNumber}`, '_blank', 'noopener');
         });
     }
     
-    // Smooth scroll for anchor links
+    // ========================
+    // 4. Scroll suave al hacer clic en enlaces con #
+    // ========================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -91,7 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar scroll effect (optional enhancement)
+    // ========================
+    // 5. Efecto de sombra en el header al hacer scroll
+    // ========================
     let lastScroll = 0;
     const header = document.querySelector('header');
     
@@ -107,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
-    // Mobile menu toggle - Mejorado
+    // ========================
+    // 6. Menú móvil (botón hamburguesa)
+    // ========================
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const menuOverlay = document.querySelector('.mobile-menu-overlay');
