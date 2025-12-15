@@ -30,20 +30,20 @@ header {
 }
 
 nav {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 3rem; /* más separación entre logo y menú */
+    gap: 2rem; /* más separación entre logo y menú */
 }
 
 .logo {
     display: flex;
     flex-direction: column;
-    gap: 0.05rem; /* frases del logo más juntas */
+    gap: 0.02rem; /* frases del logo más juntas */
     align-items: flex-start;
 }
 
