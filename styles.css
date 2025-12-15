@@ -22,10 +22,11 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: white;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-    padding: 1rem 0;
     width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+    box-shadow: 0 2px 15px rgba(5, 61, 104, 0.08);
+    border-bottom: 1px solid rgba(14, 107, 168, 0.08);
+    padding: 0.75rem 0;
 }
 
 nav {
@@ -36,23 +37,26 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 2rem;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
+    gap: 0.15rem;
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
+    letter-spacing: 0.03em;
     color: #0E6BA8;
     text-decoration: none;
 }
 
 .logo-slogan {
-    font-size: 0.75rem;
-    color: #666;
+    font-size: 0.78rem;
+    color: #607289;
     font-weight: 400;
 }
 
@@ -125,13 +129,35 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #1f2933;
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 0.98rem;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    position: relative;
+    padding-bottom: 0.35rem;
+    transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 .nav-links a:hover {
     color: #0E6BA8;
+}
+
+/* Línea indicadora bajo los ítems del menú (estilo médico limpio) */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #32C1C5, #0E6BA8);
+    border-radius: 999px;
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
