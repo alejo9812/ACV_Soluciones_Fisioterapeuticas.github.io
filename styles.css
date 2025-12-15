@@ -159,7 +159,9 @@ nav {
     transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
