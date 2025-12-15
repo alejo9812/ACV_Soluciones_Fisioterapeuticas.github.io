@@ -356,14 +356,20 @@ nav {
 }
 
 .hero-image::before {
-    content: 'Terapeuta ayudando a paciente en rehabilitación después de un ACV';
+    content: '';
     position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800');
+    top: 0;
+    left: -40%;
+    width: 140%;
+    height: 100%;
+
+    background-image: url('Inicio.jpeg');
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.8;
 }
+
+
 
 .hero-right .mini-cards {
     margin-top: 2rem;
@@ -371,7 +377,7 @@ nav {
 
 .stats-cards {
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -399,7 +405,11 @@ nav {
 .stat-text {
     font-size: 0.75rem;
     color: #666;
+
+    line-height: 1;        /* evita espacio extra */
+    margin-top: -0.5px;     /* 👈 ajuste fino */
 }
+
 
 /* =======================================
    SECCIONES GENERALES (títulos y márgenes)
