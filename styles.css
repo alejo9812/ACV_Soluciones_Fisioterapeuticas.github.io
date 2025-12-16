@@ -70,6 +70,21 @@ nav {
     line-height: 1.2;
 }
 
+/* Imagen en la barra de navegación */
+.logo-image {
+    max-width: 120px; /* Ajuste el tamaño máximo de la imagen */
+    height: auto;
+    display: inline-block;
+    margin-left: -160px;
+}
+
+/* Asegura que la imagen se ajuste */
+.logo-image img {
+    max-width: 100%;  /* La imagen se ajusta al contenedor */
+    height: auto;     /* Mantiene la proporción original */
+}
+
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -257,24 +272,6 @@ nav {
     box-shadow: 0 5px 15px rgba(14, 107, 168, 0.3);
 }
 
-.btn-secondary {
-    background: white;
-    color: #0E6BA8;
-    padding: 1rem 2rem;
-    border: 2px solid #0E6BA8;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn-secondary:hover {
-    background: #f0f9ff;
-    transform: translateY(-2px);
-}
 
 .trust-text.highlight {
     text-align: center;
