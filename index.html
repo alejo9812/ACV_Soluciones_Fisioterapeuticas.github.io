@@ -242,35 +242,58 @@
              SECCIÓN CONTACTO
              Formulario + botón de WhatsApp
              ======================= -->
-        <section id="contacto" class="contact">
-            <h2 class="contact-title">Recupera tu vida tras un ACV</h2>
-            <p class="contact-text">Agenda tu primera consulta gratis y recibe una valoración personalizada de tu caso.</p>
-            <div class="phone-button">
-                <div class="phone-button-text">Llámanos o escríbenos por WhatsApp</div>
-                <div class="phone-number">(+57) 311 476 82 13</div>
-            </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
+             <h2 class="contact-title">Contacto</h2>
+             <section class="contact" id="contacto">
+                
+              
+                <div class="contact-grid">
+                  <!-- IZQUIERDA: FORMULARIO -->
+                  <form class="contact-form">
+                    <div class="form-group">
+                      <label for="nombre">Nombre</label>
+                      <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="telefono">Teléfono</label>
+                      <input type="tel" id="telefono" placeholder="Tu número de contacto">
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="correo">Correo electrónico</label>
+                      <input type="email" id="correo" placeholder="tucorreo@email.com">
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="mensaje">Mensaje</label>
+                      <textarea id="mensaje" placeholder="Cuéntanos brevemente tu caso o consulta" required></textarea>
+                    </div>
+              
+                    <button type="submit" class="btn-primary">Enviar consulta</button>
+                  </form>
+              
+                  <!-- DERECHA: MENSAJE + CTA -->
+                  <aside class="contact-aside">
+                    <blockquote class="contact-quote">
+                      "Si has sufrido un accidente cerebrovascular, estamos aquí para acompañarte en tu proceso de recuperación.
+                      Contáctanos y agenda tu valoración"
+                    </blockquote>
+              
+                    <a
+                    href="https://wa.me/573114768213"
+                    target="_blank"
+                    class="btn-submit whatsapp-btn"
+                    aria-label="Contactar por WhatsApp"
+                  >
+                    <span class="whatsapp-text">Llámanos o escríbenos por WhatsApp</span>
+                    <span class="whatsapp-number">(+57) 311 476 8213</span>
+                  </a>
+                  
+                      
+                  </aside>
                 </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Enviar consulta</button>
-            </form>
-        </section>
-    </main>
-
+              </section>
+              
     <!-- =======================
          PIE DE PÁGINA
          ======================= -->

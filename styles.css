@@ -646,7 +646,7 @@ section {
 
 /* PREGUNTA */
 .faq-question {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #0E6BA8;
 
@@ -660,7 +660,7 @@ section {
 /* ICONO + / − */
 .faq-question::after {
     content: '+';
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #32C1C5;
     transition: transform 0.3s ease;
 }
@@ -689,117 +689,224 @@ section {
     padding-top: 0.5rem;
 }
 
+
 /* =======================================
-   SECCIÓN CONTACTO
+   SECCIÓN CONTACTO – DISEÑO PROFESIONAL
    ======================================= */
-.contact {
-    background: white;
-    padding: 4rem;
-    border-radius: 32px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 6rem auto;
-}
 
-.contact-title {
+   .contact {
+    background: #ffffff;
+    padding: 3.5rem;
+    border-radius: 28px;
+    box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+    max-width: 1100px;
+    margin: 2rem auto;
+    border: 1px solid rgba(14, 107, 168, 0.12);
+  }
+  
+  .contact-title {
     text-align: center;
-    font-size: 2rem;
-    color: #0E6BA8;
-    margin-bottom: 1rem;
-}
-
-.contact-text {
-    text-align: center;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.phone-button {
-    background: linear-gradient(135deg, #32C1C5 0%, #0E6BA8 100%);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 16px;
-    text-align: center;
-    margin-bottom: 2rem;
-    box-shadow: 0 5px 20px rgba(14, 107, 168, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.phone-button:hover {
-    transform: translateY(-2px);
-}
-
-.phone-button-text {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.phone-number {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     font-weight: 700;
-}
+    color: #0E6BA8;
+    margin-bottom: 0rem;
+  }
+  
 
-.contact-form {
+
+  /* GRID */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  
+  @media (max-width: 900px) {
+    .contact {
+      padding: 2.2rem;
+      margin: 3.5rem 1rem;
+    }
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* FORMULARIO */
+  .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.form-group {
+  }
+  
+  .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    color: #333;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
+    gap: 0.45rem;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    color: #0F172A;
+    font-size: 0.95rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.15);
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
+    background: #F8FAFC;
+    transition: all 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
     outline: none;
+    background: #ffffff;
     border-color: #0E6BA8;
-}
-
-.form-group textarea {
+    box-shadow: 0 0 0 4px rgba(14, 107, 168, 0.15);
+  }
+  
+  .form-group textarea {
+    min-height: 140px;
     resize: vertical;
-    min-height: 120px;
-}
-
-.form-message {
-    padding: 1rem;
-    border-radius: 12px;
-    margin-top: 1rem;
+  }
+  
+  /* BOTÓN PRINCIPAL */
+  .btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+  
+    background: linear-gradient(135deg, #0E6BA8 0%, #0E6BA8 100%);
+    color: #ffffff;
+  
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  
+    box-shadow: 0 14px 40px rgba(14, 107, 168, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 20px 50px rgba(14, 107, 168, 0.45);
+  }
+  
+  .btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 10px 30px rgba(14, 107, 168, 0.30);
+  }
+  
+/* Ajuste para botón WhatsApp usando btn-submit */
+.whatsapp-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* quita subrayado del <a> */
     text-align: center;
-    font-weight: 500;
-    display: none;
+    margin-top: 2.5rem;
+  }
+  
+  /* Texto superior */
+  .whatsapp-text {
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 0.35rem;
+  }
+  
+  /* Número */
+  .whatsapp-number {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+  }
+  
+
+  /* ASIDE DERECHO */
+.contact-aside {
+    background: #F8FAFC;
+    border-radius: 22px;
+    padding: 1.7rem;
+    border: 1px solid rgba(14, 107, 168, 0.12);
+
+    position: sticky;
+    top: 2rem;
+
+    margin-top: 2rem;   /* 👈 AQUÍ */
 }
 
-.form-message.success {
-    background: #d4edda;
-    color: #155724;
-    border: 2px solid #c3e6cb;
-    display: block;
+  
+  /* BLOQUE QUOTE */
+  .contact-quote {
+    margin: 0;
+    padding: 1.4rem;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(14, 107, 168, 0.12);
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.3rem;
+    line-height: 1.75;
+    font-weight: 800;          /* 👈 más ancha */
+
+    color: #0E6BA8;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
 }
 
-.form-message.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 2px solid #f5c6cb;
-    display: block;
-}
+
+  
+  /* BOTÓN SECUNDARIO */
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #0E6BA8;
+    border: 1px solid rgba(14, 107, 168, 0.35);
+    text-decoration: none;
+    background: #ffffff;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    background: #F0F9FF;
+    transform: translateY(-1px);
+  }
+  
+  /* TELÉFONO */
+  .contact-phone {
+    margin-top: 1.3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .contact-phone span {
+    font-size: 0.85rem;
+    color: #64748B;
+  }
+  
+  .contact-phone strong {
+    font-size: 1.05rem;
+    color: #0F172A;
+  }
+  
+  
 
 /* =======================================
    PIE DE PÁGINA
