@@ -916,6 +916,7 @@ section {
       linear-gradient(180deg, #0B2A45 0%, #071B2D 100%);
     border-top: 1px solid rgba(255,255,255,0.08);
     margin-top: 4rem;
+    height: 350px;
   }
   
   .footer-wrap {
