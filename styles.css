@@ -1247,21 +1247,6 @@ section {
       text-overflow: ellipsis;
     }
   
-    /* Imagen del logo (Logo.png) */
-    .logo-image{
-      display: flex;
-      align-items: center;
-      flex: 0 0 auto;
-    }
-  
-    .logo-image img{
-      height: var(--nav-logo-img-h);
-      width: auto;
-      max-width: var(--nav-logo-img-maxw);
-      object-fit: contain;
-      display: block;
-    }
-  
     /* Botón menú */
     .mobile-menu-toggle {
       display: flex !important;
