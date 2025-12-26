@@ -964,8 +964,12 @@ section {
   .footer-brand {
     width: 100%;
     display: flex;
+    flex-direction: column;   /* <-- clave: apila vertical */
     justify-content: center;
+    align-items: center;
+    gap: -2px;
   }
+  
   
   .footer-logo-img {
     width: 100%;
@@ -975,7 +979,7 @@ section {
     display: block;
   
     /* subir logo */
-    transform: translateY(-30px);
+    transform: translateY(-100px);
   
     /* azul brillante */
     filter: brightness(1.2) saturate(1.4)
@@ -1008,9 +1012,18 @@ section {
   }
   
   .footer-link:hover {
-    transform: translateY(-1px);
+    transform: translateY(-1px);    
     opacity: 0.92;
   }
+
+  .footer-link2{
+    display: grid;      /* o flex */
+    gap: 12px;          /* ajusta: 6px, 10px, 16px */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
   
   .icon {
     width: 18px;
