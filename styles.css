@@ -1175,318 +1175,407 @@ section {
 }
 
 @media (max-width: 768px) {
+
+    /* =========================================================
+       CONTROLES MANUALES (AJUSTA ESTO HASTA QUE TODO QUEPA 1 FILA)
+       ========================================================= */
+    :root{
+      --nav-padding-x: 1rem;        /* padding lateral nav */
+      --nav-gap: 0.6rem;            /* espacio entre bloques del nav */
+  
+      --logo-text-size: 1.25rem;    /* tamaño título */
+      --logo-slogan-size: 0.85rem;  /* tamaño slogan */
+      --logo-line-gap: 0.15rem;     /* separación vertical entre título y slogan */
+  
+      --nav-logo-img-h: 42px;       /* altura Logo.png */
+      --nav-logo-img-maxw: 90px;    /* ancho máximo Logo.png */
+  
+      --menu-btn-w: 42px;           /* caja botón hamburguesa */
+      --menu-btn-h: 42px;
+  
+      --eye-mobile-h: 46px;         /* tamaño Eye.png en footer (solo móvil) */
+      --eye-mobile-mb: 0.65rem;     /* margen inferior Eye.png */
+    }
+  
     header {
-        padding: 0.75rem 0;
+      padding: 0.75rem 0;
     }
-
+  
+    /* =======================
+       NAV: UNA SOLA FILA
+       ======================= */
     nav {
-        padding: 0 1rem;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        flex-wrap: wrap;
+      padding: 0 var(--nav-padding-x);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      /* ✅ CLAVE: evita 2 filas (la “doble barra”) */
+      flex-wrap: nowrap;
+  
+      gap: var(--nav-gap);
+      position: relative;
     }
-
+  
+    /* Logo (texto + slogan) */
+    .logo{
+      display: flex;
+      flex-direction: column;
+      gap: var(--logo-line-gap);
+  
+      /* ✅ permite que el bloque se encoja para que quepa todo en 1 fila */
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  
     .logo-text {
-        font-size: 1.3rem;
+      font-size: var(--logo-text-size);
+  
+      /* ✅ mantener en una línea (si no cabe, recorta con ...) */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
+  
     .logo-slogan {
-        font-size: 0.85rem;
+      font-size: var(--logo-slogan-size);
+  
+      /* ✅ mantener en una línea (si no cabe, recorta con ...) */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
+  
+    /* Imagen del logo (Logo.png) */
+    .logo-image{
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+  
+    .logo-image img{
+      height: var(--nav-logo-img-h);
+      width: auto;
+      max-width: var(--nav-logo-img-maxw);
+      object-fit: contain;
+      display: block;
+    }
+  
+    /* Botón menú */
     .mobile-menu-toggle {
-        display: flex !important;
+      display: flex !important;
+      width: var(--menu-btn-w);
+      height: var(--menu-btn-h);
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
     }
-
+  
     .mobile-menu-overlay {
-        display: none;
+      display: none;
     }
-
+  
     .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        width: 100%;
-        max-height: 0;
-        background: white;
-        flex-direction: column;
-        gap: 0;
-        margin: 0.5rem 0 0 0;
-        padding: 0;
-        list-style: none;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        border-radius: 12px;
-        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.3s ease;
-        z-index: 1000;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      width: 100%;
+      max-height: 0;
+      background: white;
+      flex-direction: column;
+      gap: 0;
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, padding 0.3s ease;
+      z-index: 1000;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
     }
-
+  
     .nav-links.active {
-        max-height: 500px;
-        opacity: 1;
-        visibility: visible;
-        padding: 0.5rem 0;
+      max-height: 500px;
+      opacity: 1;
+      visibility: visible;
+      padding: 0.5rem 0;
     }
-
+  
     .nav-links li {
-        width: 100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-
-    .nav-links li:first-child {
-        margin-top: 0;
-    }
-
-    .nav-links li:last-child {
-        margin-bottom: 0;
-    }
-
+  
+    .nav-links li:first-child { margin-top: 0; }
+    .nav-links li:last-child { margin-bottom: 0; }
+  
     .nav-links a {
-        display: flex;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-        width: 100%;
-        transition: all 0.2s ease;
-        color: #333;
-        font-weight: 500;
-        text-decoration: none;
-        position: relative;
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      width: 100%;
+      transition: all 0.2s ease;
+      color: #333;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
     }
-
+  
     .nav-links a:hover,
     .nav-links a:active {
-        background-color: #f0f9ff;
-        color: #0E6BA8;
+      background-color: #f0f9ff;
+      color: #0E6BA8;
     }
-
+  
+    /* =======================
+       RESTO (TU CÓDIGO ORIGINAL)
+       ======================= */
     .hero {
-        margin: 2rem auto;
-        padding: 0 1rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
+  
     .hero-container {
-        padding: 2rem 1.5rem;
-        border-radius: 24px;
+      padding: 2rem 1.5rem;
+      border-radius: 24px;
     }
-
+  
     .hero h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
+      font-size: 1.8rem;
+      line-height: 1.3;
     }
-
+  
     .hero p {
-        font-size: 1rem;
-        line-height: 1.6;
+      font-size: 1rem;
+      line-height: 1.6;
     }
-
+  
     .hero-buttons {
-        flex-direction: column;
-        gap: 0.75rem;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-
+  
     .btn-primary,
     .btn-secondary {
-        width: 100%;
-        text-align: center;
-        padding: 0.875rem 1.5rem;
-        font-size: 0.95rem;
+      width: 100%;
+      text-align: center;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.95rem;
     }
-
+  
     .rating-badge {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.875rem;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.875rem;
     }
-
+  
     .star-icon {
-        width: 18px;
-        height: 18px;
+      width: 18px;
+      height: 18px;
     }
-
+  
     .mini-cards {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
-
+  
     .mini-card {
-        padding: 0.875rem;
+      padding: 0.875rem;
     }
-
+  
     .mini-card-icon {
-        width: 35px;
-        height: 35px;
+      width: 35px;
+      height: 35px;
     }
-
+  
     .mini-card-content h3 {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     .mini-card-content p {
-        font-size: 0.75rem;
+      font-size: 0.75rem;
     }
-
+  
     .hero-image {
-        height: 300px;
-        border-radius: 20px;
+      height: 300px;
+      border-radius: 20px;
     }
-
+  
     .stats-cards {
-        flex-direction: column;
-        gap: 0.75rem;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-
+  
     .stat-card {
-        padding: 0.875rem;
+      padding: 0.875rem;
     }
-
+  
     .stat-number {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
+  
     .stat-text {
-        font-size: 0.7rem;
+      font-size: 0.7rem;
     }
-
+  
     section {
-        margin: 3rem auto;
-        padding: 0 1rem;
+      margin: 3rem auto;
+      padding: 0 1rem;
     }
-
+  
     .section-title {
-        font-size: 1.75rem;
-        margin-bottom: 0.75rem;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
     }
-
+  
     .section-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 2rem;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
     }
-
+  
     .treatments-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-
+  
     .treatment-card {
-        padding: 1.5rem;
+      padding: 1.5rem;
     }
-
+  
     .treatment-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
     }
-
+  
     .treatment-card h3 {
-        font-size: 1.15rem;
+      font-size: 1.15rem;
     }
-
+  
     .treatment-card p {
-        font-size: 0.95rem;
+      font-size: 0.95rem;
     }
-
+  
     .team-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-
+  
     .team-card {
-        padding: 1.5rem;
+      padding: 1.5rem;
     }
-
+  
     .team-photo {
-        width: 120px;
-        height: 120px;
-        font-size: 2.5rem;
+      width: 120px;
+      height: 120px;
+      font-size: 2.5rem;
     }
-
+  
     .testimonials {
-        padding: 3rem 1.5rem;
-        margin: 4rem auto;
-        border-radius: 24px;
+      padding: 3rem 1.5rem;
+      margin: 4rem auto;
+      border-radius: 24px;
     }
-
+  
     .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-
+  
     .testimonial-card {
-        padding: 1.5rem;
+      padding: 1.5rem;
     }
-
+  
     .testimonial-text {
-        font-size: 0.95rem;
+      font-size: 0.95rem;
     }
-
+  
     .faq-item {
-        padding: 1.25rem;
+      padding: 1.25rem;
     }
-
+  
     .faq-question {
-        font-size: 1rem;
+      font-size: 1rem;
     }
-
+  
     .faq-answer {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     .contact {
-        padding: 2rem 1.5rem;
-        margin: 4rem auto;
-        border-radius: 24px;
+      padding: 2rem 1.5rem;
+      margin: 4rem auto;
+      border-radius: 24px;
     }
-
+  
     .contact-title {
-        font-size: 1.75rem;
+      font-size: 1.75rem;
     }
-
+  
     .contact-text {
-        font-size: 0.95rem;
+      font-size: 0.95rem;
     }
-
+  
     .phone-button {
-        padding: 1.25rem;
+      padding: 1.25rem;
     }
-
+  
     .phone-button-text {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     .phone-number {
-        font-size: 1.3rem;
+      font-size: 1.3rem;
     }
-
+  
     .form-group input,
     .form-group textarea {
-        padding: 0.65rem;
-        font-size: 0.95rem;
+      padding: 0.65rem;
+      font-size: 0.95rem;
     }
-
+  
     footer {
-        padding: 1.5rem 1rem;
-        margin-top: 4rem;
+      padding: 1.5rem 1rem;
+      margin-top: 4rem;
     }
-
+  
     .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
     }
-
+  
     .footer-links {
-        flex-direction: column;
-        gap: 0.75rem;
-        align-items: center;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
     }
-}
+  
+    /* =========================================================
+       Eye.png SOLO en móvil, encima del correo comercial
+       SIN cambiar HTML (pseudo-elemento)
+       ========================================================= */
+    .footer-link[href="mailto:comercial@eyeonai.com.co"]::before{
+      content: "";
+      display: block;
+      height: var(--eye-mobile-h);
+      margin: 0 0 var(--eye-mobile-mb) 0;
+  
+      /* Asegúrate que Eye.png esté en la misma carpeta del CSS,
+         o ajusta la ruta: url("assets/Eye.png") */
+      background-image: url("Eye.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  
 
 @media (max-width: 480px) {
     nav {
