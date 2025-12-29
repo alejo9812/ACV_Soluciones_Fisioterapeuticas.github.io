@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
           });
   
           if (res.ok) {
-            showFormMessage('¡Gracias por tu consulta! Nos pondremos en contacto contigo pronto.', 'success');
+            showFormMessage('¡Gracias por tu consulta! Escribenos por WhatsApp tambien.', 'success');
             contactForm.reset();
           } else {
-            showFormMessage('No se pudo enviar la consulta. Intenta de nuevo.', 'error');
+            showFormMessage('No se pudo enviar la consulta. Escribenos por WhatsApp.', 'error');
           }
         } catch (err) {
           showFormMessage('Error de conexión. Revisa tu internet e intenta nuevamente.', 'error');
